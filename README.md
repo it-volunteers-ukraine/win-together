@@ -1,1 +1,1 @@
-# win-together test
+# Website for International Foundation “Win Together”
