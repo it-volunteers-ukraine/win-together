@@ -1,20 +1,18 @@
-<?php
-	/*
-	Template Name: fundraising
-	*/
-	get_header();
-?>
+<?php get_header(); ?>
 
-    <div class="inner-page-title-area" style='background-image:url("<?php echo get_field( 'img' )['url']; ?>")'>
+    <!--    Heading   -->
+    <div class="inner-page-title-area"
+         style='background-image:url("<?php echo get_field( 'fundraising_img', 'option' )['url']; ?>")'>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
-                    <h1><span><?php the_field( 'title' ); ?></span></h1>
+                    <h1><span><?php the_field( 'fundraising_title', 'option' ); ?></span></h1>
                 </div>
             </div>
         </div>
     </div>
 
+    <!--    Card grid   -->
     <div class="services-area pt-80 pb-50">
         <div class="container">
             <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1">
@@ -46,6 +44,4 @@
             </div>
         </div>
     </div>
-
-
 <?php get_footer(); ?>
