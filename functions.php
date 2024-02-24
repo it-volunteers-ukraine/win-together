@@ -10,6 +10,9 @@ if ( ! function_exists('wp_win_together_setup')) {
       )
     );
     add_theme_support( 'title-tag' );
+
+	add_image_size('1920x600', 1920, 600, true);
+	add_image_size('450x600', 450, 600, true);
   }
   add_action( 'after_setup_theme', 'wp_win_together_setup' );
 }

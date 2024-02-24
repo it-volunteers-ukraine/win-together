@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
     <!--    Heading   -->
-    <div class="inner-page-title-area" style='background-image:url("<?php echo get_field( 'img_banner' )['url']; ?>")'>
+    <div class="inner-page-title-area" style='background-image:url("<?php echo get_field( 'img_banner' )['sizes']['1920x600']; ?>")'>
         <div class="container">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a
@@ -57,7 +57,7 @@
                                             <a class="item" href="<?php echo esc_url( $image['url'] ); ?>"
                                                data-lightbox="fundraisingCarousel">
                                                 <div class="fundraising-carousel-img"><img
-                                                            src="<?php echo esc_url( $image['url'] ); ?>"
+                                                            src="<?php echo esc_url( $image['sizes']['450x600'] ); ?>"
                                                             alt="<?php echo esc_attr( $image['alt'] ); ?>">
                                                 </div>
                                             </a>

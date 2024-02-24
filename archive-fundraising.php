@@ -2,7 +2,7 @@
 
     <!--    Heading   -->
     <div class="inner-page-title-area"
-         style='background-image:url("<?php echo get_field( 'fundraising_img', 'option' )['url']; ?>")'>
+         style='background-image:url("<?php echo get_field( 'fundraising_img', 'option' )['sizes']['1920x600']; ?>")'>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
@@ -26,7 +26,7 @@
 							$query->the_post(); ?>
                             <div class="col mb-30">
                                 <div class="service-item">
-                                    <div class="ser-img mb-25"><img src="<?php echo get_field( 'img_card' )['url']; ?>"
+                                    <div class="ser-img mb-25"><img src="<?php echo get_field( 'img_card' )['sizes']['450x600']; ?>"
                                                                     alt="<?php echo get_field( 'img_card' )['alt']; ?>">
                                     </div>
                                     <div class="description">
