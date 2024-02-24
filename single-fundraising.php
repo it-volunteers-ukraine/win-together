@@ -21,7 +21,7 @@
 
     <div class="service-details-page pt-80 pb-50">
         <div class="container">
-            <div class="row">
+            <div class="row fundraising-row">
 
                 <!--   Sidebar   -->
                 <div class="col-lg-3">
