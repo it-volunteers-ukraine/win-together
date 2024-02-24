@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
     <!--    Heading   -->
-    <div class="inner-page-title-area" style='background-image:url("<?php echo get_field( 'img_banner' )['sizes']['1920x600']; ?>")'>
+    <div class="inner-page-title-area"
+         style='background-image:url("<?php echo get_field( 'img_banner' )['sizes']['1920x600']; ?>")'>
         <div class="container">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a
@@ -30,6 +31,7 @@
 								<?php $args = ( [
 									'posts_per_page' => - 1,
 									'post_type'      => 'fundraising',
+									'post__not_in'   => array( $post->ID ),
 								] );
 									$query  = new WP_Query( $args );
 									if ( $query->have_posts() ) :
