@@ -65,11 +65,6 @@
                                             </a>
 										<?php endforeach; ?>
                                     </div>
-                                    <div class="owl-theme">
-                                        <div class="owl-controls">
-                                            <div class="custom-nav owl-nav"></div>
-                                        </div>
-                                    </div>
                                 </div>
 							<?php endif; ?>
 

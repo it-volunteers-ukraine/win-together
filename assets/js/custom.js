@@ -107,7 +107,7 @@
 
     $('.fundraising-carousel').owlCarousel({
         loop: true,
-        margin: 20,
+        margin: 22,
         dots: false,
         nav: true,
         autoplay: false,
@@ -115,7 +115,6 @@
             '<i class="fas fa-caret-left" aria-hidden="true"></i>',
             '<i class="fas fa-caret-right" aria-hidden="true"></i>',
         ],
-        navContainer: '.fundraising-carousel-wrapper .custom-nav',
         responsive: {
             0: {
                 items: 1,

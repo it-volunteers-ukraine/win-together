@@ -2282,11 +2282,6 @@ a:hover {
     padding-bottom: 30px;
 }
 
-.fundraising-carousel-wrapper .owl-carousel .owl-stage {
-    display: flex;
-    align-items: center;
-}
-
 .fundraising-carousel-wrapper .owl-carousel .owl-item {
     border-radius: 6px;
     overflow: hidden;
@@ -2310,15 +2305,15 @@ a:hover {
     object-fit: cover;
 }
 
-.fundraising-carousel-wrapper .owl-theme .custom-nav {
+.fundraising-carousel-wrapper .owl-theme .owl-nav {
     position: absolute;
     top: 40%;
     left: 0;
     right: 0;
 }
 
-.fundraising-carousel-wrapper .owl-theme .custom-nav .owl-prev,
-.fundraising-carousel-wrapper .owl-theme .custom-nav .owl-next {
+.fundraising-carousel-wrapper .owl-theme .owl-nav .owl-prev,
+.fundraising-carousel-wrapper .owl-theme .owl-nav .owl-next {
     position: absolute;
     width: 44px;
     height: 44px;
@@ -2330,21 +2325,21 @@ a:hover {
     transition: ease 0.3s;
 }
 
-.fundraising-carousel-wrapper .owl-theme .custom-nav .owl-prev:hover,
-.fundraising-carousel-wrapper .owl-theme .custom-nav .owl-next:hover {
+.fundraising-carousel-wrapper .owl-theme .owl-nav .owl-prev:hover,
+.fundraising-carousel-wrapper .owl-theme .owl-nav .owl-next:hover {
     background-color: #0e0e0e;
 }
 
-.fundraising-carousel-wrapper .owl-theme .custom-nav .owl-prev i,
-.fundraising-carousel-wrapper .owl-theme .custom-nav .owl-next i {
+.fundraising-carousel-wrapper .owl-theme .owl-nav .owl-prev i,
+.fundraising-carousel-wrapper .owl-theme .owl-nav .owl-next i {
     font-size: 30px;
     color: #fff;
 }
 
-.fundraising-carousel-wrapper .owl-theme .custom-nav .owl-prev {
+.fundraising-carousel-wrapper .owl-theme .owl-nav .owl-prev {
     left: 0;
 }
 
-.fundraising-carousel-wrapper .owl-theme .custom-nav .owl-next {
+.fundraising-carousel-wrapper .owl-theme .owl-nav .owl-next {
     right: 0;
 }
