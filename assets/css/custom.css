@@ -329,7 +329,7 @@ a:hover {
     transition: all 0.3s ease-in-out;
 }
 
-.header-lover .navbar .nav-item .nav-link:hover, .header-lover .navbar .nav-item.active a {
+.header-lover .navbar .nav-item .nav-link:hover, .header-lover .navbar .nav-item .nav-link.active {
     color: #f44647;
 }
 
