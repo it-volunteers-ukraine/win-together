@@ -12,7 +12,7 @@
 			$counter = 0; ?>
             <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
-					<?php while ( have_rows( 'slides' ) ): the_row(); ?>
+					<?php while ( have_rows( 'banner_slides' ) ): the_row(); ?>
                         <div class="carousel-item <?php echo ( $counter === 0 ) ? 'active' : '' ?>"
                              style='background-image:url("<?php echo get_sub_field( 'img' )['url']; ?>")'>
                             <div class="carousel-caption">
@@ -24,13 +24,13 @@
                                                 <h2 class="mb-15"><?php the_sub_field( 'title' ); ?></h2>
                                                 <p><?php the_sub_field( 'text' ); ?></p>
 
-												<?php if ( get_field( 'btn_link_1' ) ) { ?>
+												<?php if ( get_field( 'banner_btn_link_1' ) ) { ?>
                                                     <a class="btn-style-2 mr-6"
-                                                       href="<?php the_field( 'btn_link_1' ); ?>"><?php the_field( 'btn_text_1' ); ?></a>
+                                                       href="<?php the_field( 'banner_btn_link_1' ); ?>"><?php the_field( 'banner_btn_text_1' ); ?></a>
 												<?php } ?>
-												<?php if ( get_field( 'btn_link_2' ) ) { ?>
+												<?php if ( get_field( 'banner_btn_link_2' ) ) { ?>
                                                     <a class="btn-style-2 mr-6"
-                                                       href="<?php the_field( 'btn_link_2' ); ?>"><?php the_field( 'btn_text_2' ); ?></a>
+                                                       href="<?php the_field( 'banner_btn_link_2' ); ?>"><?php the_field( 'banner_btn_text_2' ); ?></a>
 												<?php } ?>
                                             </div>
                                         </div>
@@ -47,5 +47,38 @@
             </div>
 		<?php endif; ?>
     </div>
+
+    <!-- ================ Fundraising area ================ -->
+    <div class="services-area pt-80 pb-50">
+        <div class="container text-center">
+
+            <div class="section-title text-center mb-40">
+                <h2><?php the_field( 'fundraising_title' ); ?></h2>
+                <span class="border-title"></span>
+            </div>
+
+            <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1">
+				<?php $args = ( [
+					'posts_per_page' => 3,
+					'post_type'      => 'fundraising',
+				] );
+					$query  = new WP_Query( $args );
+					if ( $query->have_posts() ) :
+						while ( $query->have_posts() ) :
+							$query->the_post(); ?>
+
+							<?php get_template_part( 'template-parts/content', 'fundraising-card' ); ?>
+
+						<?php endwhile;
+						wp_reset_postdata();
+					endif; ?>
+            </div>
+
+            <a href="<?php echo get_post_type_archive_link( 'fundraising' ); ?>" class="btn-style-1 mt-20 mx-auto px-5">
+				<?php the_field( 'fundraising_btn' ); ?> <i class="fas fa-caret-right"></i></a>
+
+        </div>
+    </div>
+
 
 <?php get_footer(); ?>
