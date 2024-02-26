@@ -8,7 +8,7 @@
 
     <!-- ================ Slider area ================ -->
     <div class="slider" id="home">
-		<?php if ( have_rows( 'slides' ) ):
+		<?php if ( have_rows( 'banner_slides' ) ):
 			$counter = 0; ?>
             <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -47,6 +47,8 @@
             </div>
 		<?php endif; ?>
     </div>
+    <!-- ================ Slider area end ================ -->
+
 
     <!-- ================ Fundraising area ================ -->
     <div class="services-area pt-80 pb-50">
@@ -76,9 +78,35 @@
 
             <a href="<?php echo get_post_type_archive_link( 'fundraising' ); ?>" class="btn-style-1 mt-20 mx-auto px-5">
 				<?php the_field( 'fundraising_btn' ); ?> <i class="fas fa-caret-right"></i></a>
-
         </div>
     </div>
+    <!-- ================ Fundraising area end ================ -->
+
+
+    <!-- ================ Call to action area ================ -->
+    <div class="call-to-action-area pt-100 pb-80"
+         style='background-image:url("<?php echo get_field( 'call_img' )['sizes']['1920x600']; ?>")'>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-20">
+                    <div class="cta-content">
+                        <h3><?php the_field( 'call_subtitle' ); ?></h3>
+                        <h2><?php the_field( 'call_title' ); ?></h2>
+                        <p class="mb-25"><?php the_field( 'call_text' ); ?></p>
+                        <a href="<?php the_field( 'call_btn_link' ); ?>"
+                           class="btn-style-1"><?php the_field( 'call_btn_text' ); ?></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-2 text-lg-center mb-20">
+
+                    <a id="callToActionVideoBtn" class="video-popup"
+                       data-videosource="<?php echo get_field( 'call_video' )['url']; ?>">
+                        <i class="fas fa-play" style="pointer-events: none"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================ Call to action area end ================ -->
 
 
 <?php get_footer(); ?>
