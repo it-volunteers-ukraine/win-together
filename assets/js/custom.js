@@ -127,6 +127,7 @@
 
 })(jQuery);
 
+// Image lightbox
 function initializeLightbox() {
     lightbox.option({
         'resizeDuration': 200,
@@ -140,3 +141,33 @@ function initializeLightbox() {
 document.addEventListener('DOMContentLoaded', function () {
     initializeLightbox();
 });
+
+// video lightbox
+const callToActionVideoBtn = document.querySelector('#callToActionVideoBtn');
+
+callToActionVideoBtn.addEventListener('click', openVideoLightbox);
+
+function openVideoLightbox(event) {
+    console.log(event.target.dataset);
+    const instance = basicLightbox.create(
+        `<video controls autoplay >
+			<source src="${event.target.dataset.videosource}" type="video/mp4">
+		</video>`,
+        {
+            closable: true,
+            onShow: (instance) => {
+                document.addEventListener('keydown', onEscPress);
+            },
+            onClose: (instance) => {
+                document.removeEventListener('keydown', onEscPress);
+            },
+        },
+    );
+    instance.show();
+
+    function onEscPress(event) {
+        if (event.code === 'Escape') {
+            instance.close();
+        }
+    }
+}
