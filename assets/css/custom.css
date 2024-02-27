@@ -2350,3 +2350,44 @@ a:hover {
     padding-top: 40px;
     padding-bottom: 20px;
 }
+
+
+/*Polylang language switch*/
+.language_switcher {
+    position: relative;
+}
+
+.language_switcher .dropdown-toggle img {
+    margin-top: -2px;
+}
+
+.language_switcher .dropdown-menu {
+    position: absolute;
+    min-width: auto;
+    left: 0;
+    right: 0;
+}
+
+.language_switcher .dropdown-menu .dropdown-item {
+    padding: 12px 10px 12px 10px;
+}
+
+.language_switcher .dropdown-menu a:before {
+    display: none;
+}
+
+.header-lover .navbar .language_switcher .nav-item {
+    border-bottom: none;
+}
+
+.header-lover .navbar .language_switcher .nav-item .nav-link {
+    color: #fff;
+}
+
+.is-sticky .header-lover .navbar .language_switcher .nav-item .nav-link {
+    color: #333;
+}
+
+.header-lover .language_switcher .navbar-nav {
+    background-color: transparent;
+}

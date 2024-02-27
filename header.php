@@ -20,10 +20,30 @@
 								echo get_custom_logo();
 							}
 						?>
+
+                        <!-- ================ language switcher ================ -->
+                        <div class="language_switcher ms-auto ms-md-4 me-4">
+							<?php wp_nav_menu( array(
+								'theme_location' => 'language_switcher',
+								'container'      => false,
+								'menu_class'     => false,
+								'menu_id'        => false,
+								'echo'           => true,
+								'fallback_cb'    => '__return_false',
+								'items_wrap'     => '<ul id="%1$s" class="navbar-nav ms-auto %2$s">%3$s</ul>',
+								'depth'          => 2,
+								'walker'         => new bootstrap_5_wp_nav_menu_walker(),
+							) );
+							?>
+                        </div>
+                        <!-- ================ language switcher end ================ -->
+
+
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbars01" aria-controls="navbars01" aria-expanded="false"
                                 aria-label="Перемикач мобільного меню"><span></span> <span></span> <span></span>
                         </button>
+
                         <div class="collapse navbar-collapse" id="navbars01">
 							<?php wp_nav_menu( array(
 								'theme_location' => 'header',
@@ -41,8 +61,8 @@
                     </nav>
                 </div>
 
+                <!-- ================ header social ================ -->
                 <div class="col-lg-2 text-lg-end">
-                    <!-- header social -->
                     <div class="header-social">
 						<?php if ( get_field( 'facebook', 'option' ) ) { ?>
                             <a href="<?php the_field( 'facebook', 'option' ); ?>"
@@ -71,12 +91,11 @@
                                 <i class="fab fa-pinterest-p"></i>
                             </a>
 						<?php } ?>
-                        <!-- header social end -->
                     </div>
                 </div>
+                <!-- ================ header social end ================ -->
             </div>
         </div>
 </header>
-
 
 	
