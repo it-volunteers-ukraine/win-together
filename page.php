@@ -17,21 +17,29 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+        <!--    Card grid   -->
+        <div class="services-area pt-80 pb-50">
+            <div class="container">
+                <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1">
+					<?php $args = ( [
+						'posts_per_page' => - 1,
+						'post_type'      => 'fundraising',
+					] );
+						$query  = new WP_Query( $args );
+						if ( $query->have_posts() ) :
+							while ( $query->have_posts() ) :
+								$query->the_post(); ?>
 
-			get_template_part( 'template-parts/content', 'page' );
+								<?php get_template_part( 'template-parts/content', 'fundraising-card' ); ?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+							<?php endwhile;
+							wp_reset_postdata();
+						endif; ?>
+                </div>
+            </div>
+        </div>
 
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
+	</main>
 
 <?php
 get_sidebar();

@@ -65,6 +65,7 @@ function wp_win_together_menus() {
   $locations = array(
     'header' => __( 'Header Menu', 'wp_win_together' ),
     'footer' => __( 'Footer Menu', 'wp_win_together' ),
+    'language_switcher' => __( 'Language Switcher', 'wp_win_together' ),
   );
 
   register_nav_menus( $locations );
