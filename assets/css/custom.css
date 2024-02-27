@@ -147,7 +147,7 @@ a:hover {
     background-color: #f44647;
     text-decoration: none;
     border-radius: 100%;
-    z-index: 9999;
+    z-index: 999;
 }
 
 .scroll-top:hover {
