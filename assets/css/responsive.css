@@ -113,4 +113,8 @@
     .comment-classic > * + * {
         margin-left: 0px;
     }
+
+    .about-page-about img {
+        height: 260px
+    }
 }

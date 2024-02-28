@@ -2404,3 +2404,15 @@ a:hover {
 .header-lover .language_switcher .navbar-nav {
     background-color: transparent;
 }
+
+
+/* About page */
+.about-page-about img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.about-page-fundraising .description {
+    max-width: 700px;
+}
