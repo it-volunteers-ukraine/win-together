@@ -2,7 +2,7 @@
 
     <!--    Heading   -->
     <div class="inner-page-title-area"
-         style='background-image:url("<?php echo get_field( 'img_banner' )['sizes']['1920x600']; ?>")'>
+         style='background-image:url("<?php echo esc_url( get_field( 'img_banner' )['sizes']['1920x600'] ); ?>")'>
         <div class="container">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a

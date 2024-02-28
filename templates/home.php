@@ -14,7 +14,7 @@
                 <div class="carousel-inner">
 					<?php while ( have_rows( 'banner_slides' ) ): the_row(); ?>
                         <div class="carousel-item <?php echo ( $counter === 0 ) ? 'active' : '' ?>"
-                             style='background-image:url("<?php echo get_sub_field( 'img' )['url']; ?>")'>
+                             style='background-image:url("<?php echo esc_url( get_sub_field( 'img' )['url'] ); ?>")'>
                             <div class="carousel-caption">
                                 <div class="container">
                                     <div class="row">
@@ -48,6 +48,53 @@
 		<?php endif; ?>
     </div>
     <!-- ================ Slider area end ================ -->
+
+
+    <!-- ================ About area ================ -->
+    <div class="about-area pt-80 pb-50 theme-bg-dark">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-img-wrapper">
+                        <div class="row align-items-center">
+                            <div class="col-lg-5 mb-30">
+                                <div class="about-images-1"><img
+                                            src="<?php echo esc_url( get_field( 'about_img_1' )['url'] ); ?>"
+                                            alt="<?php echo esc_attr( get_field( 'about_img_1' )['alt'] ); ?>">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 mb-30">
+                                <div class="about-images-2"><img
+                                            src="<?php echo esc_url( get_field( 'about_img_video' )['url'] ); ?>"
+                                            alt="<?php echo esc_attr( get_field( 'about_img_video' )['alt'] ); ?>">
+                                    <a id="aboutVideoBtn"
+                                       class="video-btn"
+                                       data-videosource="<?php echo get_field( 'about_video' )['url']; ?>">
+                                        <i class="fa fa-play" style="pointer-events: none"></i> <span>Play Video</span>
+                                    </a>
+                                </div>
+                                <div class="about-images-3 mt-30"><img
+                                            src="<?php echo esc_url( get_field( 'about_img_2' )['url'] ); ?>"
+                                            alt="<?php echo esc_attr( get_field( 'about_img_2' )['alt'] ); ?>"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1 mb-30">
+                    <div class="about-content">
+                        <div class="about-content-text">
+                            <h6><?php the_field( 'about_subtitle' ); ?></h6>
+                            <h2><?php the_field( 'about_title' ); ?></h2>
+							<?php the_field( 'about_text' ); ?>
+                            <a href="<?php the_field( 'about_btn_link' ); ?>"
+                               class="btn-style-1 mt-20"><?php the_field( 'about_btn_text' ); ?></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================ About area end ================ -->
 
 
     <!-- ================ Fundraising area ================ -->

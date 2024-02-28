@@ -2,7 +2,7 @@
 
     <!--    Heading   -->
     <div class="inner-page-title-area"
-         style='background-image:url("<?php echo get_field( 'fundraising_img', 'option' )['sizes']['1920x600']; ?>")'>
+         style='background-image:url("<?php echo esc_url( get_field( 'fundraising_img', 'option' )['sizes']['1920x600'] ); ?>")'>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
@@ -26,7 +26,7 @@
 							$query->the_post(); ?>
 
 							<?php get_template_part( 'template-parts/content', 'fundraising-card' ); ?>
-                            
+
 						<?php endwhile;
 						wp_reset_postdata();
 					endif; ?>
