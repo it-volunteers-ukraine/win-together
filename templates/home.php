@@ -50,6 +50,59 @@
     <!-- ================ Slider area end ================ -->
 
 
+    <!-- ================ Features area ================ -->
+<?php if ( have_rows( 'work_list' ) ): ?>
+    <div class="features-area">
+        <div class="container-fluid">
+            <div class="row">
+				<?php while ( have_rows( 'work_list' ) ): the_row(); ?>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <!-- feature item -->
+                        <div class="feature-item h-100"><i class="fas fa-check-circle"></i>
+                            <h4><?php the_sub_field( 'title' ); ?></h4>
+                            <p class="mb-0"><?php the_sub_field( 'description' ); ?></p>
+                        </div>
+                    </div>
+				<?php endwhile; ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+    <!-- ================ Features area end ================ -->
+
+
+    <!-- ================ Fundraising area ================ -->
+    <div class="services-area pt-80 pb-50">
+        <div class="container text-center">
+
+            <div class="section-title text-center mb-40">
+                <h2><?php the_field( 'fundraising_title' ); ?></h2>
+                <span class="border-title"></span>
+            </div>
+
+            <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1">
+				<?php $args = ( [
+					'posts_per_page' => 3,
+					'post_type'      => 'fundraising',
+				] );
+					$query  = new WP_Query( $args );
+					if ( $query->have_posts() ) :
+						while ( $query->have_posts() ) :
+							$query->the_post(); ?>
+
+							<?php get_template_part( 'template-parts/content', 'fundraising-card' ); ?>
+
+						<?php endwhile;
+						wp_reset_postdata();
+					endif; ?>
+            </div>
+
+            <a href="<?php echo get_post_type_archive_link( 'fundraising' ); ?>" class="btn-style-1 mt-20 mx-auto px-5">
+				<?php the_field( 'fundraising_btn' ); ?> <i class="fas fa-caret-right"></i></a>
+        </div>
+    </div>
+    <!-- ================ Fundraising area end ================ -->
+
     <!-- ================ About area ================ -->
     <div class="about-area pt-80 pb-50 theme-bg-dark">
         <div class="container">
@@ -95,40 +148,6 @@
         </div>
     </div>
     <!-- ================ About area end ================ -->
-
-
-    <!-- ================ Fundraising area ================ -->
-    <div class="services-area pt-80 pb-50">
-        <div class="container text-center">
-
-            <div class="section-title text-center mb-40">
-                <h2><?php the_field( 'fundraising_title' ); ?></h2>
-                <span class="border-title"></span>
-            </div>
-
-            <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1">
-				<?php $args = ( [
-					'posts_per_page' => 3,
-					'post_type'      => 'fundraising',
-				] );
-					$query  = new WP_Query( $args );
-					if ( $query->have_posts() ) :
-						while ( $query->have_posts() ) :
-							$query->the_post(); ?>
-
-							<?php get_template_part( 'template-parts/content', 'fundraising-card' ); ?>
-
-						<?php endwhile;
-						wp_reset_postdata();
-					endif; ?>
-            </div>
-
-            <a href="<?php echo get_post_type_archive_link( 'fundraising' ); ?>" class="btn-style-1 mt-20 mx-auto px-5">
-				<?php the_field( 'fundraising_btn' ); ?> <i class="fas fa-caret-right"></i></a>
-        </div>
-    </div>
-    <!-- ================ Fundraising area end ================ -->
-
 
     <!-- ================ Call to action area ================ -->
     <div class="call-to-action-area pt-100 pb-80"
