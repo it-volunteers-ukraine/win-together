@@ -45,7 +45,7 @@
 				<?php while ( have_rows( 'work_list' ) ): the_row(); ?>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <!-- feature item -->
-                        <div class="feature-item h-100"><i class="fas fa-mobile-alt"></i>
+                        <div class="feature-item h-100"><i class="fas fa-check-circle"></i>
                             <h4><?php the_sub_field( 'title' ); ?></h4>
                             <p class="mb-0"><?php the_sub_field( 'description' ); ?></p>
                         </div>
