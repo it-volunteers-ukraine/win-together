@@ -14,7 +14,7 @@
                 <div class="carousel-inner">
 					<?php while ( have_rows( 'banner_slides' ) ): the_row(); ?>
                         <div class="carousel-item <?php echo ( $counter === 0 ) ? 'active' : '' ?>"
-                             style='background-image:url("<?php echo get_sub_field( 'img' )['url']; ?>")'>
+                             style='background-image:url("<?php echo esc_url( get_sub_field( 'img' )['url'] ); ?>")'>
                             <div class="carousel-caption">
                                 <div class="container">
                                     <div class="row">
@@ -48,6 +48,53 @@
 		<?php endif; ?>
     </div>
     <!-- ================ Slider area end ================ -->
+
+
+    <!-- ================ About area ================ -->
+    <div class="about-area pt-80 pb-50 theme-bg-dark">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-img-wrapper">
+                        <div class="row align-items-center">
+                            <div class="col-lg-5 mb-30">
+                                <div class="about-images-1"><img
+                                            src="<?php echo esc_url( get_field( 'about_img_1' )['url'] ); ?>"
+                                            alt="<?php echo esc_attr( get_field( 'about_img_1' )['alt'] ); ?>">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 mb-30">
+                                <div class="about-images-2"><img
+                                            src="<?php echo esc_url( get_field( 'about_img_video' )['url'] ); ?>"
+                                            alt="<?php echo esc_attr( get_field( 'about_img_video' )['alt'] ); ?>">
+                                    <a id="aboutVideoBtn"
+                                       class="video-btn"
+                                       data-videosource="<?php echo get_field( 'about_video' )['url']; ?>">
+                                        <i class="fa fa-play" style="pointer-events: none"></i> <span>Play Video</span>
+                                    </a>
+                                </div>
+                                <div class="about-images-3 mt-30"><img
+                                            src="<?php echo esc_url( get_field( 'about_img_2' )['url'] ); ?>"
+                                            alt="<?php echo esc_attr( get_field( 'about_img_2' )['alt'] ); ?>"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1 mb-30">
+                    <div class="about-content">
+                        <div class="about-content-text">
+                            <h6><?php the_field( 'about_subtitle' ); ?></h6>
+                            <h2><?php the_field( 'about_title' ); ?></h2>
+							<?php the_field( 'about_text' ); ?>
+                            <a href="<?php the_field( 'about_btn_link' ); ?>"
+                               class="btn-style-1 mt-20"><?php the_field( 'about_btn_text' ); ?></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================ About area end ================ -->
 
 
     <!-- ================ Fundraising area ================ -->
@@ -107,6 +154,70 @@
         </div>
     </div>
     <!-- ================ Call to action area end ================ -->
+
+    <!-- ================ Contact area ================ -->
+    <div class="contact-area pb-50 pt-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-5 mb-30">
+                    <!-- map box -->
+                    <div class="map-box">
+                        <iframe src="<?php the_field( 'google_map', 'option' ); ?>"></iframe>
+                    </div>
+                    <!-- map box end -->
+                </div>
+                <div class="col-lg-5 col-md-7 mb-30">
+                    <!-- contact info -->
+                    <div class="contact-info-box">
+                        <h3 class="text-white mb-20 text-decoration-underline"><?php the_field( 'contacts_title' ); ?></h3>
+                        <ul class="contact-info">
+                            <li><a href="tel:<?php the_field( 'phone', 'option' ); ?>">
+                                    <i class="fas fa-phone-alt"></i> <?php the_field( 'phone_display', 'option' ); ?>
+                                </a>
+                            </li>
+                            <li><a href="mailto:<?php the_field( 'email', 'option' ); ?>">
+                                    <i class="far fa-envelope"></i> <?php the_field( 'email', 'option' ); ?></a>
+                            </li>
+                            <li><i class="fas fa-map-marker-alt"></i> <?php the_field( 'address', 'option' ); ?></li>
+                        </ul>
+                        <!-- contact social -->
+                        <div class="contact-social mt-20">
+							<?php if ( get_field( 'facebook', 'option' ) ) { ?>
+                                <a href="<?php the_field( 'facebook', 'option' ); ?>"
+                                   target="_blank" aria-label="facebook" class="me-2 mt-2">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+							<?php } ?>
+
+							<?php if ( get_field( 'instagram', 'option' ) ) { ?>
+                                <a href="<?php the_field( 'instagram', 'option' ); ?>"
+                                   target="_blank" aria-label="Instagram" class="me-2 mt-2">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+							<?php } ?>
+
+							<?php if ( get_field( 'twitter', 'option' ) ) { ?>
+                                <a href="<?php the_field( 'twitter', 'option' ); ?>"
+                                   target="_blank" aria-label="twitter" class="me-2 mt-2">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+							<?php } ?>
+
+							<?php if ( get_field( 'pinterest', 'option' ) ) { ?>
+                                <a href="<?php the_field( 'pinterest', 'option' ); ?>"
+                                   target="_blank" aria-label="pinterest" class="me-2 mt-2">
+                                    <i class="fab fa-pinterest-p"></i>
+                                </a>
+							<?php } ?>
+                        </div>
+                        <!-- contact social end -->
+                    </div>
+                    <!-- contact info end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================ Contact area end ================ -->
 
 
 <?php get_footer(); ?>

@@ -144,8 +144,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // video lightbox
 const callToActionVideoBtn = document.querySelector('#callToActionVideoBtn');
+const aboutVideoBtn = document.querySelector('#aboutVideoBtn');
 
 callToActionVideoBtn.addEventListener('click', openVideoLightbox);
+aboutVideoBtn.addEventListener('click', openVideoLightbox);
 
 function openVideoLightbox(event) {
     console.log(event.target.dataset);
