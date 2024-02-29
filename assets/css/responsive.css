@@ -85,6 +85,11 @@
     .comment-classic-group .comment-classic-group {
         margin-left: 0px;
     }
+
+    .contact-row {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
 
 /* Extra Small Devices, Phones */

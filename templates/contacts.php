@@ -29,7 +29,7 @@
 
             <p class="description mx-auto text-center mb-40"><?php the_field( 'text' ); ?></p>
 
-            <div class="row">
+            <div class="row contact-row">
                 <div class="col-lg-7 col-md-5 mb-30">
                     <!-- map box -->
                     <div class="map-box">
