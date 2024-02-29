@@ -2428,3 +2428,9 @@ a:hover {
 .about-page-fundraising .description, .contact-page .description {
     max-width: 700px;
 }
+
+/* Custom logo */
+.custom-logo {
+    height: 60px;
+    width: auto;
+}
