@@ -21,8 +21,8 @@
 							}
 						?>
 
-                        <!-- ================ language switcher ================ -->
-                        <div class="language_switcher ms-auto ms-md-4 me-4">
+                        <!-- ================ language switcher mobile ================ -->
+                        <div class="language_switcher ms-auto me-4 d-md-none">
 							<?php wp_nav_menu( array(
 								'theme_location' => 'language_switcher',
 								'container'      => false,
@@ -36,7 +36,7 @@
 							) );
 							?>
                         </div>
-                        <!-- ================ language switcher end ================ -->
+                        <!-- ================ language switcher mobile end ================ -->
 
 
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -58,6 +58,25 @@
 							) );
 							?>
                         </div>
+
+                        <!-- ================ language switcher desktop ================ -->
+                        <div class="language_switcher ms-auto ms-md-4 me-2 d-none d-md-block">
+							<?php wp_nav_menu( array(
+								'theme_location' => 'language_switcher',
+								'container'      => false,
+								'menu_class'     => false,
+								'menu_id'        => false,
+								'echo'           => true,
+								'fallback_cb'    => '__return_false',
+								'items_wrap'     => '<ul id="%1$s" class="navbar-nav ms-auto %2$s">%3$s</ul>',
+								'depth'          => 2,
+								'walker'         => new bootstrap_5_wp_nav_menu_walker(),
+							) );
+							?>
+                        </div>
+                        <!-- ================ language switcher desktop end ================ -->
+
+
                     </nav>
                 </div>
 
