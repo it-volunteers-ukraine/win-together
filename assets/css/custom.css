@@ -655,6 +655,18 @@ a:hover {
     margin-bottom: 10px;
 }
 
+.service-item h6 a {
+    color: #fff;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.service-item h6 a:hover {
+    color: #f44647;
+}
+
 .service-item:hover .description {
     border: 1px solid #f44647;
 }
@@ -1796,7 +1808,7 @@ a:hover {
     font-size: 36px;
     color: #fff;
     margin-top: 83px;
-    line-height: 100%;
+    line-height: 140%;
 }
 
 .inner-page-title-area h1 span {

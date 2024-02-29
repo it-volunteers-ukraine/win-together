@@ -8,16 +8,17 @@
                 <li class="breadcrumb-item"><a
                             href="<?php echo get_post_type_archive_link( 'fundraising' ); ?>"><?php the_field( 'fundraising_title', 'option' ); ?></a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page"><?php the_field( 'title_banner' ); ?></li>
+                <li class="breadcrumb-item active"
+                    aria-current="page"><?php the_field( 'fundraising_breadcrumb', 'option' ); ?></li>
             </ol>
             <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <h1><span><?php the_field( 'title_banner' ); ?></span></h1>
+                <div class="col-lg-8 offset-lg-2">
+                    <h1 class><?php the_field( 'title_banner' ); ?></h1>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ================ Banner area end ================ -->
+    </div
+            <!-- ================ Banner area end ================ -->
 
 
     <div class="service-details-page pt-80 pb-50">
@@ -30,7 +31,7 @@
                         <div class="sidebar-item-box mb-30">
                             <ul class="sidebar-list">
 								<?php $args = ( [
-									'posts_per_page' => - 1,
+									'posts_per_page' => 10,
 									'post_type'      => 'fundraising',
 									'post__not_in'   => array( $post->ID ),
 								] );
@@ -38,7 +39,8 @@
 									if ( $query->have_posts() ) :
 										while ( $query->have_posts() ) :
 											$query->the_post(); ?>
-                                            <li><a href="<?php the_permalink(); ?>"><?php the_field( 'title' ); ?>
+                                            <li>
+                                                <a href="<?php the_permalink(); ?>"><?php the_field( 'title_banner' ); ?>
                                                     <i class="fas fa-caret-right"></i></a></li>
 										<?php endwhile;
 										wp_reset_postdata();
