@@ -4,7 +4,7 @@
                                         alt="<?php echo get_field( 'img_card' )['alt']; ?>">
         </div>
         <div class="description">
-            <h6><a href="<?php the_permalink(); ?>"><?php the_field( 'title' ); ?></a></h6>
+            <h6><a href="<?php the_permalink(); ?>"><?php the_field( 'title_banner' ); ?></a></h6>
             <p><?php the_field( 'description' ); ?></p>
             <a href="<?php the_permalink(); ?>"
                class="btn-style-3"><?php the_field( 'btn_card' ); ?>
