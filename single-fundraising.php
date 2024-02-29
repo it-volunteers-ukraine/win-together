@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <!--    Heading   -->
+    <!-- ================ Banner area ================ -->
     <div class="inner-page-title-area"
          style='background-image:url("<?php echo esc_url( get_field( 'img_banner' )['sizes']['1920x600'] ); ?>")'>
         <div class="container">
@@ -17,13 +17,14 @@
             </div>
         </div>
     </div>
+    <!-- ================ Banner area end ================ -->
 
 
     <div class="service-details-page pt-80 pb-50">
         <div class="container">
             <div class="row fundraising-row">
 
-                <!--   Sidebar   -->
+                <!-- ================ Sidebar ================ -->
                 <div class="col-lg-3">
                     <aside>
                         <div class="sidebar-item-box mb-30">
@@ -46,8 +47,10 @@
                         </div>
                     </aside>
                 </div>
+                <!-- ================ Sidebar end ================ -->
 
-                <!--  Post content  -->
+
+                <!-- ================ Post content ================ -->
                 <div class="col-lg-9">
                     <div class="service-content">
 						<?php

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <!--    Heading   -->
+    <!-- ================ Banner area ================ -->
     <div class="inner-page-title-area"
          style='background-image:url("<?php echo esc_url( get_field( 'fundraising_img', 'option' )['sizes']['1920x600'] ); ?>")'>
         <div class="container">
@@ -11,8 +11,10 @@
             </div>
         </div>
     </div>
+    <!-- ================ Banner area end ================ -->
 
-    <!--    Card grid   -->
+
+    <!-- ================ Card grid ================ -->
     <div class="services-area pt-80 pb-50">
         <div class="container">
             <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1">
@@ -33,4 +35,7 @@
             </div>
         </div>
     </div>
+    <!-- ================ Card grid end ================ -->
+
+
 <?php get_footer(); ?>

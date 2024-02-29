@@ -5,7 +5,7 @@
 	get_header();
 ?>
 
-    <!--    Heading   -->
+    <!-- ================ Banner area ================ -->
     <div class="inner-page-title-area"
          style='background-image:url("<?php echo esc_url( get_field( 'banner_img' )['sizes']['1920x600'] ); ?>")'>
         <div class="container">
@@ -16,12 +16,15 @@
             </div>
         </div>
     </div>
+    <!-- ================ Banner area end ================ -->
+
 
     <!-- ================ About area ================ -->
     <div class="about-page-about pt-40">
         <div class="container">
             <div class="section-title text-center mb-40">
                 <h2><?php the_field( 'about_title' ); ?></h2>
+                <span class="border-title"></span>
             </div>
             <div class="row">
                 <div class="col-lg-6 mb-5 mb-lg-0 ">

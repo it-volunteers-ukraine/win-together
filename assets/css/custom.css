@@ -2413,6 +2413,6 @@ a:hover {
     border-radius: 8px;
 }
 
-.about-page-fundraising .description {
+.about-page-fundraising .description, .contact-page .description {
     max-width: 700px;
 }

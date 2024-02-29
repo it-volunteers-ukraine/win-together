@@ -177,18 +177,17 @@
     <!-- ================ Contact area ================ -->
     <div class="contact-area pb-50 pt-60">
         <div class="container">
-            <div class="row">
+            <div class="row contact-row">
                 <div class="col-lg-7 col-md-5 mb-30">
-                    <!-- map box -->
                     <div class="map-box">
                         <iframe src="<?php the_field( 'google_map', 'option' ); ?>"></iframe>
                     </div>
-                    <!-- map box end -->
                 </div>
+
                 <div class="col-lg-5 col-md-7 mb-30">
                     <!-- contact info -->
-                    <div class="contact-info-box">
-                        <h3 class="text-white mb-20 text-decoration-underline"><?php the_field( 'contacts_title' ); ?></h3>
+                    <div class="contact-info-box h-100">
+                        <h3 class="text-white mb-20"><?php the_field( 'contacts_title' ); ?></h3>
                         <ul class="contact-info">
                             <li><a href="tel:<?php the_field( 'phone', 'option' ); ?>">
                                     <i class="fas fa-phone-alt"></i> <?php the_field( 'phone_display', 'option' ); ?>
