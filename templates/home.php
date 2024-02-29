@@ -24,11 +24,11 @@
                                                 <h2 class="mb-15"><?php the_sub_field( 'title' ); ?></h2>
                                                 <p><?php the_sub_field( 'text' ); ?></p>
 
-												<?php if ( get_field( 'banner_btn_link_1' ) ) { ?>
+												<?php if ( get_field( 'banner_btn_link_1' ) && get_field( 'banner_btn_text_1' ) ) { ?>
                                                     <a class="btn-style-2 mr-6"
                                                        href="<?php the_field( 'banner_btn_link_1' ); ?>"><?php the_field( 'banner_btn_text_1' ); ?></a>
 												<?php } ?>
-												<?php if ( get_field( 'banner_btn_link_2' ) ) { ?>
+												<?php if ( get_field( 'banner_btn_link_2' ) && get_field( 'banner_btn_text_2' ) ) { ?>
                                                     <a class="btn-style-2 mr-6"
                                                        href="<?php the_field( 'banner_btn_link_2' ); ?>"><?php the_field( 'banner_btn_text_2' ); ?></a>
 												<?php } ?>
@@ -159,8 +159,10 @@
                         <h3><?php the_field( 'call_subtitle' ); ?></h3>
                         <h2><?php the_field( 'call_title' ); ?></h2>
                         <p class="mb-25"><?php the_field( 'call_text' ); ?></p>
-                        <a href="<?php the_field( 'call_btn_link' ); ?>"
-                           class="btn-style-1"><?php the_field( 'call_btn_text' ); ?></a>
+						<?php if ( get_field( 'call_btn_link' ) && get_field( 'call_btn_text' ) ) { ?>
+                            <a href="<?php the_field( 'call_btn_link' ); ?>"
+                               class="btn-style-1"><?php the_field( 'call_btn_text' ); ?></a>
+						<?php } ?>
                     </div>
                 </div>
                 <div class="col-lg-3 offset-lg-2 text-lg-center mb-20">
@@ -175,7 +177,7 @@
     <!-- ================ Call to action area end ================ -->
 
     <!-- ================ Contact area ================ -->
-    <div class="contact-area pb-50 pt-60">
+    <div class="contact-area pb-50 pt-80">
         <div class="container">
             <div class="row contact-row">
                 <div class="col-lg-7 col-md-5 mb-30">
