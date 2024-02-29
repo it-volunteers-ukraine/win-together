@@ -22,14 +22,14 @@
     <!-- ================ Contact area ================ -->
     <div class="contact-page contact-area pb-50 pt-60">
         <div class="container">
-            <div class="section-title text-center mb-40">
+            <div class="section-title text-center mb-20">
                 <h2><?php the_field( 'title' ); ?></h2>
                 <span class="border-title"></span>
             </div>
 
-            <p class="description mx-auto text-center mb-40"><?php the_field( 'text' ); ?></p>
+            <p class="description mx-auto text-center mb-md-5"><?php the_field( 'text' ); ?></p>
 
-            <div class="row contact-row">
+            <div class="row contact-row pt-md-3">
                 <div class="col-lg-7 col-md-5 mb-30">
                     <!-- map box -->
                     <div class="map-box">
