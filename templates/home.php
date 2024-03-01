@@ -149,6 +149,31 @@
     </div>
     <!-- ================ About area end ================ -->
 
+
+    <!-- ================ Counter area ================ -->
+<?php if ( have_rows( 'achievement_list' ) ): ?>
+    <div class="counter-area pt-100 pb-70">
+        <div class="container">
+            <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-2 row-cols-1">
+				<?php while ( have_rows( 'achievement_list' ) ): the_row(); ?>
+                    <div class="col mb-30">
+                        <div class="single-counter-box h-100">
+                            <div class="text-wrap">
+                                <div class="content">
+                                    <div class="counter-info-text"><span class="counter"><?php the_sub_field('number');?></span></div>
+                                    <h4 class="title"><?php the_sub_field('description');?></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				<?php endwhile; ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+    <!-- ================ Counter area end ================ -->
+
+
     <!-- ================ Call to action area ================ -->
     <div class="call-to-action-area pt-100 pb-80"
          style='background-image:url("<?php echo get_field( 'call_img' )['sizes']['1920x600']; ?>")'>

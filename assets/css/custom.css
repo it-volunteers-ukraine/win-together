@@ -77,7 +77,6 @@ a {
 
 p, li {
     line-height: 26px;
-    /*font-size: 14px;*/
     color: #a4aaaf;
     font-family: "Roboto", sans-serif;
 }
@@ -883,17 +882,18 @@ a:hover {
 	07. Counter area
 =================================== */
 .counter-area {
-    background-image: url(../img/bg/counter-bg.jpg);
-    background-size: cover;
-    background-position: center top;
+    /*background-image: url(../img/bg/counter-bg.jpg);*/
+    /*background-size: cover;*/
+    /*background-position: center top;*/
     position: relative;
     z-index: 0;
+    background-color: #202020;
 }
 
 .counter-area:after {
     position: absolute;
     content: "";
-    background-color: rgba(0, 0, 0, 0.7);
+    /*background-color: rgba(0, 0, 0, 0.7);*/
     width: 100%;
     height: 100%;
     left: 0px;
@@ -922,7 +922,6 @@ a:hover {
     color: #ccc;
     font-weight: 400;
     font-size: 16px;
-    white-space: nowrap;
 }
 
 /* ===================================
