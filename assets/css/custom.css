@@ -2434,3 +2434,16 @@ a:hover {
     height: 60px;
     width: auto;
 }
+
+/* Pagination */
+.custom-pagination .page-numbers {
+    padding: 3px 8px;
+    margin-right: 10px;
+    color: #a4aaaf;
+}
+
+.custom-pagination .page-numbers.current {
+    padding: 3px 8px;
+    margin-right: 10px;
+    color: #f44647;
+}
