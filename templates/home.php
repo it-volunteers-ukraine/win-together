@@ -25,11 +25,11 @@
                                                 <p><?php the_sub_field( 'text' ); ?></p>
 
 												<?php if ( get_field( 'banner_btn_link_1' ) && get_field( 'banner_btn_text_1' ) ) { ?>
-                                                    <a class="btn-style-2 mr-6"
+                                                    <a class="btn-style-2 mr-6 mb-6"
                                                        href="<?php the_field( 'banner_btn_link_1' ); ?>"><?php the_field( 'banner_btn_text_1' ); ?></a>
 												<?php } ?>
 												<?php if ( get_field( 'banner_btn_link_2' ) && get_field( 'banner_btn_text_2' ) ) { ?>
-                                                    <a class="btn-style-2 mr-6"
+                                                    <a class="btn-style-2 mr-6 mb-6"
                                                        href="<?php the_field( 'banner_btn_link_2' ); ?>"><?php the_field( 'banner_btn_text_2' ); ?></a>
 												<?php } ?>
                                             </div>
