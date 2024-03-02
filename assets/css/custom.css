@@ -2446,3 +2446,25 @@ a:hover {
     margin-right: 10px;
     color: #f44647;
 }
+
+/* Partner carousel */
+.partner-carousel .partner-item {
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.partner-carousel .partner-item img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.partner-carousel .partner-item p {
+    margin-bottom: 0;
+    text-align: center;
+    color: #333;
+    font-weight: 500;
+    font-size: 17px;
+}

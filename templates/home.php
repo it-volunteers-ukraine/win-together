@@ -160,8 +160,9 @@
                         <div class="single-counter-box h-100">
                             <div class="text-wrap">
                                 <div class="content">
-                                    <div class="counter-info-text"><span class="counter"><?php the_sub_field('number');?></span></div>
-                                    <h4 class="title"><?php the_sub_field('description');?></h4>
+                                    <div class="counter-info-text"><span
+                                                class="counter"><?php the_sub_field( 'number' ); ?></span></div>
+                                    <h4 class="title"><?php the_sub_field( 'description' ); ?></h4>
                                 </div>
                             </div>
                         </div>
@@ -200,6 +201,53 @@
         </div>
     </div>
     <!-- ================ Call to action area end ================ -->
+
+
+    <!-- ================ Partner area ================ -->
+<?php if ( have_rows( 'partners' ) ): ?>
+    <div class="partner-area pt-80 pb-80">
+        <div class="container">
+            <div class="partner-carousel owl-carousel owl-theme">
+				<?php while ( have_rows( 'partners' ) ):
+					the_row(); ?>
+					<?php
+					$name = get_sub_field( 'title' );
+					$logo = get_sub_field( 'img' );
+					$link = get_sub_field( 'link' );
+					?>
+                    <div class="item">
+						<?php if ( $link && $logo ): ?>
+                            <a href="<?php echo esc_url( $link ); ?>" target="_blanc" class="partner-item p-1">
+                                <img src="<?php echo esc_url( $logo['url'] ); ?>"
+                                     alt="<?php echo esc_attr( $name ); ?>" loading="lazy"
+                                     class="img-fluid">
+                            </a>
+						<?php endif ?>
+						<?php if ( ! $link && $logo ): ?>
+                            <div class="partner-item p-1">
+                                <img src="<?php echo esc_url( $logo['url'] ); ?>"
+                                     alt="<?php echo esc_attr( $name ); ?>" loading="lazy"
+                                     class="img-fluid">
+                            </div>
+						<?php endif ?>
+						<?php if ( $link && ! $logo && $name ): ?>
+                            <a href="<?php echo esc_url( $link ); ?>" target="_blanc" class="partner-item p-1">
+                                <p><?php echo esc_attr( $name ); ?></p>
+                            </a>
+						<?php endif ?>
+						<?php if ( ! $link && ! $logo && $name ): ?>
+                            <div class="partner-item p-1">
+                                <p><?php echo esc_attr( $name ); ?></p>
+                            </div>
+						<?php endif ?>
+                    </div>
+				<?php endwhile; ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+    <!-- ================ Partner area end ================ -->
+
 
     <!-- ================ Contact area ================ -->
     <div class="contact-area pb-50 pt-80">
