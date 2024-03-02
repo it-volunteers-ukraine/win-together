@@ -25,11 +25,11 @@
                                                 <p><?php the_sub_field( 'text' ); ?></p>
 
 												<?php if ( get_field( 'banner_btn_link_1' ) && get_field( 'banner_btn_text_1' ) ) { ?>
-                                                    <a class="btn-style-2 mr-6"
+                                                    <a class="btn-style-2 mr-6 mb-6"
                                                        href="<?php the_field( 'banner_btn_link_1' ); ?>"><?php the_field( 'banner_btn_text_1' ); ?></a>
 												<?php } ?>
 												<?php if ( get_field( 'banner_btn_link_2' ) && get_field( 'banner_btn_text_2' ) ) { ?>
-                                                    <a class="btn-style-2 mr-6"
+                                                    <a class="btn-style-2 mr-6 mb-6"
                                                        href="<?php the_field( 'banner_btn_link_2' ); ?>"><?php the_field( 'banner_btn_text_2' ); ?></a>
 												<?php } ?>
                                             </div>
@@ -149,6 +149,32 @@
     </div>
     <!-- ================ About area end ================ -->
 
+
+    <!-- ================ Counter area ================ -->
+<?php if ( have_rows( 'achievement_list' ) ): ?>
+    <div class="counter-area pt-100 pb-70">
+        <div class="container">
+            <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-2 row-cols-1">
+				<?php while ( have_rows( 'achievement_list' ) ): the_row(); ?>
+                    <div class="col mb-30">
+                        <div class="single-counter-box h-100">
+                            <div class="text-wrap">
+                                <div class="content">
+                                    <div class="counter-info-text"><span
+                                                class="counter"><?php the_sub_field( 'number' ); ?></span></div>
+                                    <h4 class="title"><?php the_sub_field( 'description' ); ?></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				<?php endwhile; ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+    <!-- ================ Counter area end ================ -->
+
+
     <!-- ================ Call to action area ================ -->
     <div class="call-to-action-area pt-100 pb-80"
          style='background-image:url("<?php echo get_field( 'call_img' )['sizes']['1920x600']; ?>")'>
@@ -175,6 +201,53 @@
         </div>
     </div>
     <!-- ================ Call to action area end ================ -->
+
+
+    <!-- ================ Partner area ================ -->
+<?php if ( have_rows( 'partners' ) ): ?>
+    <div class="partner-area pt-80 pb-80">
+        <div class="container">
+            <div class="partner-carousel owl-carousel owl-theme">
+				<?php while ( have_rows( 'partners' ) ):
+					the_row(); ?>
+					<?php
+					$name = get_sub_field( 'title' );
+					$logo = get_sub_field( 'img' );
+					$link = get_sub_field( 'link' );
+					?>
+                    <div class="item">
+						<?php if ( $link && $logo ): ?>
+                            <a href="<?php echo esc_url( $link ); ?>" target="_blanc" class="partner-item p-1">
+                                <img src="<?php echo esc_url( $logo['url'] ); ?>"
+                                     alt="<?php echo esc_attr( $name ); ?>" loading="lazy"
+                                     class="img-fluid">
+                            </a>
+						<?php endif ?>
+						<?php if ( ! $link && $logo ): ?>
+                            <div class="partner-item p-1">
+                                <img src="<?php echo esc_url( $logo['url'] ); ?>"
+                                     alt="<?php echo esc_attr( $name ); ?>" loading="lazy"
+                                     class="img-fluid">
+                            </div>
+						<?php endif ?>
+						<?php if ( $link && ! $logo && $name ): ?>
+                            <a href="<?php echo esc_url( $link ); ?>" target="_blanc" class="partner-item p-1">
+                                <p><?php echo esc_attr( $name ); ?></p>
+                            </a>
+						<?php endif ?>
+						<?php if ( ! $link && ! $logo && $name ): ?>
+                            <div class="partner-item p-1">
+                                <p><?php echo esc_attr( $name ); ?></p>
+                            </div>
+						<?php endif ?>
+                    </div>
+				<?php endwhile; ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+    <!-- ================ Partner area end ================ -->
+
 
     <!-- ================ Contact area ================ -->
     <div class="contact-area pb-50 pt-80">

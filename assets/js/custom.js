@@ -88,19 +88,23 @@
         dots: false,
         nav: false,
         autoplay: true,
+        autoplayHoverPause:true,
         responsiveClass: true,
         responsive: {
             0: {
                 items: 2,
             },
-            767: {
-                items: 2,
+            500: {
+                items: 3,
             },
             768: {
                 items: 4,
             },
-            1000: {
+            992: {
                 items: 5,
+            },
+            1200: {
+                items: 6,
             },
         },
     });
