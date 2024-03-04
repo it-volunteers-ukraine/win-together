@@ -98,6 +98,10 @@
         display: flex;
         flex-direction: column-reverse;
     }
+
+    .slider-overlay h1 {
+        font-size: 42px;
+    }
 }
 
 /* Extra Small Devices, Phones */
@@ -129,5 +133,9 @@
 
     .about-page-about img {
         height: 260px
+    }
+
+    .slider-overlay h1 {
+        font-size: 38px;
     }
 }

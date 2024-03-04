@@ -478,6 +478,61 @@ a:hover {
 /* ===================================
 	03. Slider
 =================================== */
+.homepage-banner {
+    position: relative;
+    min-height: 100vh;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.slider-overlay {
+    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.slider-overlay h1 {
+    margin-bottom: 40px;
+    word-wrap: break-word;
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+}
+
+.slider-overlay p {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #bfbebe;
+}
+
+.slider-overlay .wysiwyg-text strong {
+    color: #fff;
+}
+
+.slider-overlay .wysiwyg-text em, .slider-overlay .wysiwyg-text em strong {
+    color: #d5292a;
+}
+
+
+.slider-overlay-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .slider .carousel-caption {
     top: 50%;
     bottom: auto;
@@ -493,20 +548,9 @@ a:hover {
     background-position: center center;
     -webkit-background-size: cover;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
 }
 
-.slider .carousel-item.slider-one {
-    background-image: url("../img/slider/slider-1.jpg"); /*edit image*/
-}
-
-.slider .carousel-item.slider-two {
-    background-image: url("../img/slider/slider-2.jpg"); /*edit image*/
-}
-
-.slider .carousel-item.slider-three {
-    background-image: url("../img/slider/slider-3.jpg"); /*edit image*/
-}
 
 .slider .carousel-caption .slider-caption-box {
     position: relative;
@@ -545,6 +589,7 @@ a:hover {
     color: #fff;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.6);
+    z-index: 3;
 }
 
 .slider .carousel-control-next span, .slider .carousel-control-prev span {

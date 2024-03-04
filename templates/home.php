@@ -9,45 +9,69 @@
     <!-- ================ Slider area ================ -->
 <?php if ( get_field( 'banner_show' ) ) : ?>
 
-    <div class="slider" id="home">
-		<?php if ( have_rows( 'banner_slides' ) ):
-			$counter = 0; ?>
-            <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner">
-					<?php while ( have_rows( 'banner_slides' ) ): the_row(); ?>
-                        <div class="carousel-item <?php echo ( $counter === 0 ) ? 'active' : '' ?>"
-                             style='background-image:url("<?php echo esc_url( get_sub_field( 'img' )['url'] ); ?>")'>
-                            <div class="carousel-caption">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="slider-caption-box">
-                                                <h3><?php the_sub_field( 'subtitle' ); ?></h3>
-                                                <h2 class="mb-15"><?php the_sub_field( 'title' ); ?></h2>
-                                                <p><?php the_sub_field( 'text' ); ?></p>
-
-												<?php if ( get_field( 'banner_btn_link_1' ) && get_field( 'banner_btn_text_1' ) ) { ?>
-                                                    <a class="btn-style-2 mr-6 mb-6"
-                                                       href="<?php the_field( 'banner_btn_link_1' ); ?>"><?php the_field( 'banner_btn_text_1' ); ?></a>
-												<?php } ?>
-												<?php if ( get_field( 'banner_btn_link_2' ) && get_field( 'banner_btn_text_2' ) ) { ?>
-                                                    <a class="btn-style-2 mr-6 mb-6"
-                                                       href="<?php the_field( 'banner_btn_link_2' ); ?>"><?php the_field( 'banner_btn_text_2' ); ?></a>
-												<?php } ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-						<?php $counter ++; endwhile; ?>
+    <div class="homepage-banner">
+        <div class="slider-overlay">
+            <div class="container">
+                <div class="slider-overlay-content">
+                    <h1><?php the_field( 'banner_title' ); ?></h1>
+                    <div class="wysiwyg-text">
+						<?php the_field( 'banner_text' ); ?>
+                    </div>
                 </div>
-                <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev"> <span
-                            class="carousel-control-prev-icon" aria-hidden="true"></span> </a> <a
-                        class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next"> <span
-                            class="carousel-control-next-icon" aria-hidden="true"></span> </a>
             </div>
-		<?php endif; ?>
+        </div>
+
+        <div class="slider" id="home">
+			<?php if ( have_rows( 'banner_slides' ) ):
+				$counter = 0; ?>
+                <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+						<?php while ( have_rows( 'banner_slides' ) ): the_row(); ?>
+                            <div class="carousel-item <?php echo ( $counter === 0 ) ? 'active' : '' ?>"
+                                 style='background-image:url("<?php echo esc_url( get_sub_field( 'img' )['url'] ); ?>")'>
+
+
+                                <!--                            <div class="carousel-caption">-->
+                                <!--                                <div class="container">-->
+                                <!--                                    <div class="row">-->
+                                <!--                                        <div class="col-lg-6">-->
+                                <!--                                            <div class="slider-caption-box">-->
+                                <!--                                                <h3>-->
+								<?php //the_sub_field( 'subtitle' ); ?><!--</h3>-->
+                                <!--                                                <h2 class="mb-15">-->
+								<?php //the_sub_field( 'title' ); ?><!--</h2>-->
+                                <!--                                                <p>-->
+								<?php //the_sub_field( 'text' ); ?><!--</p>-->
+                                <!---->
+                                <!--												--><?php //if ( get_field( 'banner_btn_link_1' ) && get_field( 'banner_btn_text_1' ) ) { ?>
+                                <!--                                                    <a class="btn-style-2 mr-6 mb-6"-->
+                                <!--                                                       href="-->
+								<?php //the_field( 'banner_btn_link_1' ); ?><!--">-->
+								<?php //the_field( 'banner_btn_text_1' ); ?><!--</a>-->
+                                <!--												--><?php //} ?>
+                                <!--												--><?php //if ( get_field( 'banner_btn_link_2' ) && get_field( 'banner_btn_text_2' ) ) { ?>
+                                <!--                                                    <a class="btn-style-2 mr-6 mb-6"-->
+                                <!--                                                       href="-->
+								<?php //the_field( 'banner_btn_link_2' ); ?><!--">-->
+								<?php //the_field( 'banner_btn_text_2' ); ?><!--</a>-->
+                                <!--												--><?php //} ?>
+                                <!--                                            </div>-->
+                                <!--                                        </div>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+                                <!--                            </div>-->
+
+
+                            </div>
+							<?php $counter ++; endwhile; ?>
+                    </div>
+                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev"> <span
+                                class="carousel-control-prev-icon" aria-hidden="true"></span> </a> <a
+                            class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next"> <span
+                                class="carousel-control-next-icon" aria-hidden="true"></span> </a>
+                </div>
+			<?php endif; ?>
+        </div>
     </div>
 
 <?php endif; ?>
