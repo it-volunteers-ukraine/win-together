@@ -2468,6 +2468,7 @@ a:hover {
 .custom-logo {
     height: 60px;
     width: auto;
+    margin-right: 16px;
 }
 
 /* Pagination */

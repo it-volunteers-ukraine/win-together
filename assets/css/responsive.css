@@ -8,6 +8,15 @@
 
 */
 
+
+@media (max-width: 1199px) {
+    .header-social a {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
 /* Medium Devices, Desktops */
 @media (max-width: 991px) {
     .header-social {
