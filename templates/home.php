@@ -83,9 +83,15 @@
                 <div class="row">
 					<?php while ( have_rows( 'work_list' ) ): the_row(); ?>
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <!-- feature item -->
                             <div class="feature-item h-100">
-                                <!--                                <i class="fas fa-check-circle"></i>-->
+                                <div class="img-box">
+									<?php if ( get_sub_field( 'img' ) ): ?>
+                                        <img src="<?php echo esc_url( get_sub_field( 'img' )['url'] ); ?>"
+                                             alt="<?php echo esc_url( get_sub_field( 'img' )['alt'] ); ?>">
+									<?php else: ?>
+                                        <i class="fas fa-check-circle"></i>
+									<?php endif; ?>
+                                </div>
                                 <h4><?php the_sub_field( 'title' ); ?></h4>
                                 <p class="mb-0"><?php the_sub_field( 'description' ); ?></p>
                             </div>
