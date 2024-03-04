@@ -123,7 +123,12 @@
                                     <a id="aboutVideoBtn"
                                        class="video-btn"
                                        data-videosource="<?php echo get_field( 'about_video' )['url']; ?>">
-                                        <i class="fa fa-play" style="pointer-events: none"></i> <span>Play Video</span>
+                                        <i class="fa fa-play"
+                                           style="pointer-events: none"
+                                           data-videosource="<?php echo get_field( 'about_video' )['url']; ?>"></i>
+                                        <span
+                                                style="pointer-events: none"
+                                                data-videosource="<?php echo get_field( 'about_video' )['url']; ?>">Play Video</span>
                                     </a>
                                 </div>
                                 <div class="about-images-3 mt-30"><img

@@ -151,10 +151,9 @@ const callToActionVideoBtn = document.querySelector('#callToActionVideoBtn');
 const aboutVideoBtn = document.querySelector('#aboutVideoBtn');
 
 callToActionVideoBtn.addEventListener('click', openVideoLightbox);
-aboutVideoBtn.addEventListener('click', openVideoLightbox);
+aboutVideoBtn.addEventListener('click', openVideoLightbox,true);
 
 function openVideoLightbox(event) {
-    console.log(event.target.dataset);
     const instance = basicLightbox.create(
         `<video controls autoplay >
 			<source src="${event.target.dataset.videosource}" type="video/mp4">
