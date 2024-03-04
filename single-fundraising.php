@@ -74,7 +74,7 @@
 							<?php endif; ?>
 
                         <h3 class="text-white mb-20"><?php the_field( 'title' ); ?></h3>
-                        <div class="fundraising-text">
+                        <div class="wysiwyg-text">
 							<?php the_field( 'text' ); ?>
                         </div>
                         <div class="sidebar-item-box mb-30">

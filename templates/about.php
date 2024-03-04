@@ -26,7 +26,7 @@
     <!-- ================ About area ================ -->
 <?php if ( get_field( 'about_show' ) ) : ?>
 
-    <div class="about-page-about pt-40">
+    <div class="about-page-about pt-40 pb-60">
         <div class="container">
             <div class="section-title text-center mb-40">
                 <h2><?php the_field( 'about_title' ); ?></h2>
@@ -48,6 +48,27 @@
     <!-- ================ About area end ================ -->
 
 
+    <!-- ================ Additional text area ================ -->
+<?php if ( get_field( 'additional_show' ) ) : ?>
+
+    <div class="pt-50">
+        <div class="container">
+            <div class="section-title text-center mb-40">
+                <h2><?php the_field( 'additional_title' ); ?></h2>
+                <span class="border-title"></span>
+            </div>
+            <div class="row wysiwyg-text">
+                <div class="col-xl-10 offset-xl-1">
+					<?php the_field( 'additional_text' ); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php endif; ?>
+    <!-- ================ Additional text area end ================ -->
+
+
     <!-- ================ Features area ================ -->
 <?php if ( get_field( 'work_list_show' ) ) : ?>
 
@@ -58,7 +79,8 @@
 					<?php while ( have_rows( 'work_list' ) ): the_row(); ?>
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <!-- feature item -->
-                            <div class="feature-item h-100"><i class="fas fa-check-circle"></i>
+                            <div class="feature-item h-100">
+                                <!--                                <i class="fas fa-check-circle"></i>-->
                                 <h4><?php the_sub_field( 'title' ); ?></h4>
                                 <p class="mb-0"><?php the_sub_field( 'description' ); ?></p>
                             </div>
@@ -70,7 +92,6 @@
 	<?php endif; ?>
 
 <?php endif; ?>
-
     <!-- ================ Features area end ================ -->
 
     <!-- ================ Fundraising area ================ -->
