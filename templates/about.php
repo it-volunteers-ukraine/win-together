@@ -6,6 +6,8 @@
 ?>
 
     <!-- ================ Banner area ================ -->
+<?php if ( get_field( 'banner_show' ) ) : ?>
+
     <div class="inner-page-title-area"
          style='background-image:url("<?php echo esc_url( get_field( 'banner_img' )['sizes']['1920x600'] ); ?>")'>
         <div class="container">
@@ -16,10 +18,14 @@
             </div>
         </div>
     </div>
+
+<?php endif; ?>
     <!-- ================ Banner area end ================ -->
 
 
     <!-- ================ About area ================ -->
+<?php if ( get_field( 'about_show' ) ) : ?>
+
     <div class="about-page-about pt-40">
         <div class="container">
             <div class="section-title text-center mb-40">
@@ -37,30 +43,39 @@
             </div>
         </div>
     </div>
+
+<?php endif; ?>
     <!-- ================ About area end ================ -->
 
 
     <!-- ================ Features area ================ -->
-<?php if ( have_rows( 'work_list' ) ): ?>
-    <div class="features-area pt-60">
-        <div class="container-fluid">
-            <div class="row">
-				<?php while ( have_rows( 'work_list' ) ): the_row(); ?>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <!-- feature item -->
-                        <div class="feature-item h-100"><i class="fas fa-check-circle"></i>
-                            <h4><?php the_sub_field( 'title' ); ?></h4>
-                            <p class="mb-0"><?php the_sub_field( 'description' ); ?></p>
+<?php if ( get_field( 'work_list_show' ) ) : ?>
+
+	<?php if ( have_rows( 'work_list' ) ): ?>
+        <div class="features-area pt-60">
+            <div class="container-fluid">
+                <div class="row">
+					<?php while ( have_rows( 'work_list' ) ): the_row(); ?>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <!-- feature item -->
+                            <div class="feature-item h-100"><i class="fas fa-check-circle"></i>
+                                <h4><?php the_sub_field( 'title' ); ?></h4>
+                                <p class="mb-0"><?php the_sub_field( 'description' ); ?></p>
+                            </div>
                         </div>
-                    </div>
-				<?php endwhile; ?>
+					<?php endwhile; ?>
+                </div>
             </div>
         </div>
-    </div>
+	<?php endif; ?>
+
 <?php endif; ?>
+
     <!-- ================ Features area end ================ -->
 
     <!-- ================ Fundraising area ================ -->
+<?php if ( get_field( 'fundraising_show' ) ) : ?>
+
     <div class="about-page-fundraising pt-80 pb-50">
         <div class="container text-center">
 
@@ -92,6 +107,8 @@
 				<?php the_field( 'fundraising_btn' ); ?> <i class="fas fa-caret-right"></i></a>
         </div>
     </div>
+
+<?php endif; ?>
     <!-- ================ Fundraising area end ================ -->
 
 

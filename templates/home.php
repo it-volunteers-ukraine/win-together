@@ -7,6 +7,8 @@
 
 
     <!-- ================ Slider area ================ -->
+<?php if ( get_field( 'banner_show' ) ) : ?>
+
     <div class="slider" id="home">
 		<?php if ( have_rows( 'banner_slides' ) ):
 			$counter = 0; ?>
@@ -47,31 +49,40 @@
             </div>
 		<?php endif; ?>
     </div>
+
+<?php endif; ?>
+
     <!-- ================ Slider area end ================ -->
 
 
     <!-- ================ Features area ================ -->
-<?php if ( have_rows( 'work_list' ) ): ?>
-    <div class="features-area">
-        <div class="container-fluid">
-            <div class="row">
-				<?php while ( have_rows( 'work_list' ) ): the_row(); ?>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <!-- feature item -->
-                        <div class="feature-item h-100"><i class="fas fa-check-circle"></i>
-                            <h4><?php the_sub_field( 'title' ); ?></h4>
-                            <p class="mb-0"><?php the_sub_field( 'description' ); ?></p>
+<?php if ( get_field( 'work_list_show' ) ) : ?>
+
+	<?php if ( have_rows( 'work_list' ) ): ?>
+        <div class="features-area">
+            <div class="container-fluid">
+                <div class="row">
+					<?php while ( have_rows( 'work_list' ) ): the_row(); ?>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <!-- feature item -->
+                            <div class="feature-item h-100"><i class="fas fa-check-circle"></i>
+                                <h4><?php the_sub_field( 'title' ); ?></h4>
+                                <p class="mb-0"><?php the_sub_field( 'description' ); ?></p>
+                            </div>
                         </div>
-                    </div>
-				<?php endwhile; ?>
+					<?php endwhile; ?>
+                </div>
             </div>
         </div>
-    </div>
+	<?php endif; ?>
+
 <?php endif; ?>
     <!-- ================ Features area end ================ -->
 
 
     <!-- ================ Fundraising area ================ -->
+<?php if ( get_field( 'fundraising_show' ) ) : ?>
+
     <div class="services-area pt-80 pb-50">
         <div class="container text-center">
 
@@ -101,9 +112,14 @@
 				<?php the_field( 'fundraising_btn' ); ?> <i class="fas fa-caret-right"></i></a>
         </div>
     </div>
+
+<?php endif; ?>
+
     <!-- ================ Fundraising area end ================ -->
 
     <!-- ================ About area ================ -->
+<?php if ( get_field( 'about_show' ) ) : ?>
+
     <div class="about-area pt-80 pb-50 theme-bg-dark">
         <div class="container">
             <div class="row align-items-center">
@@ -152,35 +168,43 @@
             </div>
         </div>
     </div>
+
+<?php endif; ?>
     <!-- ================ About area end ================ -->
 
 
     <!-- ================ Counter area ================ -->
-<?php if ( have_rows( 'achievement_list' ) ): ?>
-    <div class="counter-area pt-100 pb-70">
-        <div class="container">
-            <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-2 row-cols-1">
-				<?php while ( have_rows( 'achievement_list' ) ): the_row(); ?>
-                    <div class="col mb-30">
-                        <div class="single-counter-box h-100">
-                            <div class="text-wrap">
-                                <div class="content">
-                                    <div class="counter-info-text"><span
-                                                class="counter"><?php the_sub_field( 'number' ); ?></span></div>
-                                    <h4 class="title"><?php the_sub_field( 'description' ); ?></h4>
+<?php if ( get_field( 'achievement_list_show' ) ) : ?>
+
+	<?php if ( have_rows( 'achievement_list' ) ): ?>
+        <div class="counter-area pt-100 pb-70">
+            <div class="container">
+                <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-2 row-cols-1">
+					<?php while ( have_rows( 'achievement_list' ) ): the_row(); ?>
+                        <div class="col mb-30">
+                            <div class="single-counter-box h-100">
+                                <div class="text-wrap">
+                                    <div class="content">
+                                        <div class="counter-info-text"><span
+                                                    class="counter"><?php the_sub_field( 'number' ); ?></span></div>
+                                        <h4 class="title"><?php the_sub_field( 'description' ); ?></h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-				<?php endwhile; ?>
+					<?php endwhile; ?>
+                </div>
             </div>
         </div>
-    </div>
+	<?php endif; ?>
+
 <?php endif; ?>
     <!-- ================ Counter area end ================ -->
 
 
     <!-- ================ Call to action area ================ -->
+<?php if ( get_field( 'call_show' ) ) : ?>
+
     <div class="call-to-action-area pt-100 pb-80"
          style='background-image:url("<?php echo get_field( 'call_img' )['sizes']['1920x600']; ?>")'>
         <div class="container">
@@ -205,56 +229,64 @@
             </div>
         </div>
     </div>
+
+<?php endif; ?>
     <!-- ================ Call to action area end ================ -->
 
 
     <!-- ================ Partner area ================ -->
-<?php if ( have_rows( 'partners' ) ): ?>
-    <div class="partner-area pt-80 pb-80">
-        <div class="container">
-            <div class="partner-carousel owl-carousel owl-theme">
-				<?php while ( have_rows( 'partners' ) ):
-					the_row(); ?>
-					<?php
-					$name = get_sub_field( 'title' );
-					$logo = get_sub_field( 'img' );
-					$link = get_sub_field( 'link' );
-					?>
-                    <div class="item">
-						<?php if ( $link && $logo ): ?>
-                            <a href="<?php echo esc_url( $link ); ?>" target="_blanc" class="partner-item p-1">
-                                <img src="<?php echo esc_url( $logo['url'] ); ?>"
-                                     alt="<?php echo esc_attr( $name ); ?>" loading="lazy"
-                                     class="img-fluid">
-                            </a>
-						<?php endif ?>
-						<?php if ( ! $link && $logo ): ?>
-                            <div class="partner-item p-1">
-                                <img src="<?php echo esc_url( $logo['url'] ); ?>"
-                                     alt="<?php echo esc_attr( $name ); ?>" loading="lazy"
-                                     class="img-fluid">
-                            </div>
-						<?php endif ?>
-						<?php if ( $link && ! $logo && $name ): ?>
-                            <a href="<?php echo esc_url( $link ); ?>" target="_blanc" class="partner-item p-1">
-                                <p><?php echo esc_attr( $name ); ?></p>
-                            </a>
-						<?php endif ?>
-						<?php if ( ! $link && ! $logo && $name ): ?>
-                            <div class="partner-item p-1">
-                                <p><?php echo esc_attr( $name ); ?></p>
-                            </div>
-						<?php endif ?>
-                    </div>
-				<?php endwhile; ?>
+<?php if ( get_field( 'partners_show' ) ) : ?>
+
+	<?php if ( have_rows( 'partners' ) ): ?>
+        <div class="partner-area pt-80 pb-80">
+            <div class="container">
+                <div class="partner-carousel owl-carousel owl-theme">
+					<?php while ( have_rows( 'partners' ) ):
+						the_row(); ?>
+						<?php
+						$name = get_sub_field( 'title' );
+						$logo = get_sub_field( 'img' );
+						$link = get_sub_field( 'link' );
+						?>
+                        <div class="item">
+							<?php if ( $link && $logo ): ?>
+                                <a href="<?php echo esc_url( $link ); ?>" target="_blanc" class="partner-item p-1">
+                                    <img src="<?php echo esc_url( $logo['url'] ); ?>"
+                                         alt="<?php echo esc_attr( $name ); ?>" loading="lazy"
+                                         class="img-fluid">
+                                </a>
+							<?php endif ?>
+							<?php if ( ! $link && $logo ): ?>
+                                <div class="partner-item p-1">
+                                    <img src="<?php echo esc_url( $logo['url'] ); ?>"
+                                         alt="<?php echo esc_attr( $name ); ?>" loading="lazy"
+                                         class="img-fluid">
+                                </div>
+							<?php endif ?>
+							<?php if ( $link && ! $logo && $name ): ?>
+                                <a href="<?php echo esc_url( $link ); ?>" target="_blanc" class="partner-item p-1">
+                                    <p><?php echo esc_attr( $name ); ?></p>
+                                </a>
+							<?php endif ?>
+							<?php if ( ! $link && ! $logo && $name ): ?>
+                                <div class="partner-item p-1">
+                                    <p><?php echo esc_attr( $name ); ?></p>
+                                </div>
+							<?php endif ?>
+                        </div>
+					<?php endwhile; ?>
+                </div>
             </div>
         </div>
-    </div>
+	<?php endif; ?>
+
 <?php endif; ?>
     <!-- ================ Partner area end ================ -->
 
 
     <!-- ================ Contact area ================ -->
+<?php if ( get_field( 'contacts_show' ) ) : ?>
+
     <div class="contact-area pb-50 pt-80">
         <div class="container">
             <div class="row contact-row">
@@ -315,6 +347,8 @@
             </div>
         </div>
     </div>
+
+<?php endif; ?>
     <!-- ================ Contact area end ================ -->
 
 
