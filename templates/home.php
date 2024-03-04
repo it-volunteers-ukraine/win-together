@@ -80,7 +80,7 @@
 	<?php if ( have_rows( 'work_list' ) ): ?>
         <div class="features-area">
             <div class="container-fluid">
-                <div class="row">
+                <div class="row justify-content-center">
 					<?php while ( have_rows( 'work_list' ) ): the_row(); ?>
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="feature-item h-100">
@@ -205,7 +205,7 @@
 	<?php if ( have_rows( 'achievement_list' ) ): ?>
         <div class="counter-area pt-100 pb-70">
             <div class="container">
-                <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-2 row-cols-1">
+                <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-2 row-cols-1 justify-content-center">
 					<?php while ( have_rows( 'achievement_list' ) ): the_row(); ?>
                         <div class="col mb-30">
                             <div class="single-counter-box h-100">

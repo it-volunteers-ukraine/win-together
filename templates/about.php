@@ -75,7 +75,7 @@
 	<?php if ( have_rows( 'work_list' ) ): ?>
         <div class="features-area pt-60">
             <div class="container-fluid">
-                <div class="row">
+                <div class="row justify-content-center">
 					<?php while ( have_rows( 'work_list' ) ): the_row(); ?>
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="feature-item h-100">
