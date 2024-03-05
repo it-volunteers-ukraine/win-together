@@ -60,7 +60,7 @@
                         </div>
 
                         <!-- ================ language switcher desktop ================ -->
-                        <div class="language_switcher ms-auto ms-md-4 me-2 d-none d-md-block">
+                        <div class="language_switcher ms-auto ms-md-4 d-none d-md-block">
 							<?php wp_nav_menu( array(
 								'theme_location' => 'language_switcher',
 								'container'      => false,
@@ -104,10 +104,10 @@
                             </a>
 						<?php } ?>
 
-						<?php if ( get_field( 'pinterest', 'option' ) ) { ?>
-                            <a href="<?php the_field( 'pinterest', 'option' ); ?>"
-                               target="_blank" aria-label="pinterest">
-                                <i class="fab fa-pinterest-p"></i>
+						<?php if ( get_field( 'telegram', 'option' ) ) { ?>
+                            <a href="<?php the_field( 'telegram', 'option' ); ?>"
+                               target="_blank" aria-label="telegram">
+                                <i class="fab fa-telegram-plane"></i>
                             </a>
 						<?php } ?>
                     </div>

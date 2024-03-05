@@ -8,6 +8,15 @@
 
 */
 
+
+@media (max-width: 1199px) {
+    .header-social a {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
 /* Medium Devices, Desktops */
 @media (max-width: 991px) {
     .header-social {
@@ -89,6 +98,10 @@
         display: flex;
         flex-direction: column-reverse;
     }
+
+    .slider-overlay h1 {
+        font-size: 42px;
+    }
 }
 
 /* Extra Small Devices, Phones */
@@ -120,5 +133,9 @@
 
     .about-page-about img {
         height: 260px
+    }
+
+    .slider-overlay h1 {
+        font-size: 38px;
     }
 }

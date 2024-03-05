@@ -88,7 +88,7 @@
         dots: false,
         nav: false,
         autoplay: true,
-        autoplayHoverPause:true,
+        autoplayHoverPause: true,
         responsiveClass: true,
         responsive: {
             0: {
@@ -154,7 +154,6 @@ callToActionVideoBtn.addEventListener('click', openVideoLightbox);
 aboutVideoBtn.addEventListener('click', openVideoLightbox);
 
 function openVideoLightbox(event) {
-    console.log(event.target.dataset);
     const instance = basicLightbox.create(
         `<video controls autoplay >
 			<source src="${event.target.dataset.videosource}" type="video/mp4">
