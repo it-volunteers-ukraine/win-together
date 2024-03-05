@@ -150,8 +150,8 @@ document.addEventListener('DOMContentLoaded', function () {
 const callToActionVideoBtn = document.querySelector('#callToActionVideoBtn');
 const aboutVideoBtn = document.querySelector('#aboutVideoBtn');
 
-callToActionVideoBtn.addEventListener('click', openVideoLightbox);
-aboutVideoBtn.addEventListener('click', openVideoLightbox);
+callToActionVideoBtn && callToActionVideoBtn.addEventListener('click', openVideoLightbox);
+aboutVideoBtn && aboutVideoBtn.addEventListener('click', openVideoLightbox);
 
 function openVideoLightbox(event) {
     const instance = basicLightbox.create(
@@ -175,4 +175,22 @@ function openVideoLightbox(event) {
             instance.close();
         }
     }
+}
+
+
+//  Copy to clipboard at donate page
+const btns = document.querySelectorAll('.copy-to-clipboard');
+const clipboard = new ClipboardJS(btns);
+
+clipboard.on('success', (e) => onSuccessCopy(e));
+
+function onSuccessCopy(e) {
+    const checkIcon = e.trigger.parentElement.querySelector('.check-icon');
+    e.trigger.classList.add('d-none');
+    checkIcon.classList.remove('d-none');
+
+    setTimeout(() => {
+        e.trigger.classList.remove('d-none');
+        checkIcon.classList.add('d-none');
+    }, 3000);
 }
