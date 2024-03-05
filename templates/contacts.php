@@ -6,6 +6,8 @@
 ?>
 
     <!-- ================ Banner area ================ -->
+<?php if ( get_field( 'banner_show' ) ) : ?>
+
     <div class="inner-page-title-area"
          style='background-image:url("<?php echo esc_url( get_field( 'banner_img' )['sizes']['1920x600'] ); ?>")'>
         <div class="container">
@@ -16,6 +18,8 @@
             </div>
         </div>
     </div>
+
+<?php endif; ?>
     <!-- ================ Banner area end ================ -->
 
 
@@ -73,11 +77,10 @@
                                     <i class="fab fa-twitter"></i>
                                 </a>
 							<?php } ?>
-
-							<?php if ( get_field( 'pinterest', 'option' ) ) { ?>
-                                <a href="<?php the_field( 'pinterest', 'option' ); ?>"
-                                   target="_blank" aria-label="pinterest" class="me-2 mt-2">
-                                    <i class="fab fa-pinterest-p"></i>
+							<?php if ( get_field( 'telegram', 'option' ) ) { ?>
+                                <a href="<?php the_field( 'telegram', 'option' ); ?>"
+                                   target="_blank" aria-label="telegram">
+                                    <i class="fab fa-telegram-plane"></i>
                                 </a>
 							<?php } ?>
                         </div>
