@@ -77,17 +77,56 @@
                         <div class="wysiwyg-text">
 							<?php the_field( 'text' ); ?>
                         </div>
-                        <div class="sidebar-item-box mb-30">
-                            <div class="sidebar-header">
-                                <h5>Contact Us</h5>
+                        <!-- ================ Post content end ================ -->
+
+                        <!-- ================ Donate section ================ -->
+						<?php if ( get_field( 'donate_show', 'option' ) ) : ?>
+                            <div class="sidebar-item-box mb-30">
+                                <div class="sidebar-header">
+                                    <h5><?php the_field( 'donate_title', 'option' ); ?></h5>
+                                </div>
+
+								<?php if ( have_rows( 'donate_req', 'option' ) ): ?>
+									<?php while ( have_rows( 'donate_req', 'option' ) ): the_row() ?>
+                                        <div class="donate-item">
+                                            <h6 class="donate-item-title"><?php the_sub_field( 'title' ); ?></h6>
+
+											<?php if ( have_rows( 'additional' ) ): ?>
+												<?php while ( have_rows( 'additional' ) ): the_row() ?>
+                                                    <div class="row donate-row">
+                                                        <div class="col-md-4 mb-2 mb-md-0 donate-row-title"><?php the_sub_field( 'additional_title' ); ?></div>
+                                                        <div class="col-md-8 donate-row-info">
+                                                            <span class="info-text"><?php the_sub_field( 'additional_info' ); ?></span>
+
+                                                            <button class="ms-3 copy-to-clipboard"
+                                                                  data-clipboard-text='<?php the_sub_field( 'additional_info' ); ?>'>
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="28"
+                                                                     height="28" viewBox="0 0 256 256">
+                                                                    <g fill="currentColor">
+                                                                        <path d="M216 40v128h-48V88H88V40Z"
+                                                                              opacity="0.2"/>
+                                                                        <path d="M216 32H88a8 8 0 0 0-8 8v40H40a8 8 0 0 0-8 8v128a8 8 0 0 0 8 8h128a8 8 0 0 0 8-8v-40h40a8 8 0 0 0 8-8V40a8 8 0 0 0-8-8m-56 176H48V96h112Zm48-48h-32V88a8 8 0 0 0-8-8H96V48h112Z"/>
+                                                                    </g>
+                                                                </svg>
+                                                            </button>
+
+                                                            <span class="check-icon d-none ms-3">
+                                                               <svg xmlns="http://www.w3.org/2000/svg" width="28"
+                                                                    height="28" viewBox="0 0 32 32"><path fill="#13e736"
+                                                                                                          d="M23.281 7.281L11.5 19.063L8.719 16.28L7.28 17.72l2.782 2.781L8 22.563L1.719 16.28L.28 17.72l7 7l.719.687l.719-.687l2.781-2.782l2.781 2.782l.719.687l.719-.687l15.906-16l-1.438-1.438L15 22.563L12.937 20.5L24.72 8.719z"/></svg>
+                                                            </span>
+
+                                                        </div>
+                                                    </div>
+												<?php endwhile; ?>
+											<?php endif; ?>
+                                        </div>
+									<?php endwhile; ?>
+								<?php endif; ?>
                             </div>
-                            <ul class="sidebar-contact">
-                                <li><a href="tel:+12345678">Phone <span>+12345678</span></a></li>
-                                <li><a href="mailto:info@example.com">Email <span>info@example.com</span></a></li>
-                                <li><a href="#">Hours <span>09.00AM - 06:00PM</span></a></li>
-                                <li><a href="#">Website <span>www.example.com</span></a></li>
-                            </ul>
-                        </div>
+						<?php endif; ?>
+                        <!-- ================ Donate section end ================ -->
+
                     </div>
                 </div>
             </div>
