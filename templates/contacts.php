@@ -73,11 +73,10 @@
                                     <i class="fab fa-twitter"></i>
                                 </a>
 							<?php } ?>
-
-							<?php if ( get_field( 'pinterest', 'option' ) ) { ?>
-                                <a href="<?php the_field( 'pinterest', 'option' ); ?>"
-                                   target="_blank" aria-label="pinterest" class="me-2 mt-2">
-                                    <i class="fab fa-pinterest-p"></i>
+							<?php if ( get_field( 'telegram', 'option' ) ) { ?>
+                                <a href="<?php the_field( 'telegram', 'option' ); ?>"
+                                   target="_blank" aria-label="telegram">
+                                    <i class="fab fa-telegram-plane"></i>
                                 </a>
 							<?php } ?>
                         </div>
