@@ -6,6 +6,8 @@
 ?>
 
     <!-- ================ Banner area ================ -->
+<?php if ( get_field( 'banner_show' ) ) : ?>
+
     <div class="inner-page-title-area"
          style='background-image:url("<?php echo esc_url( get_field( 'banner_img' )['sizes']['1920x600'] ); ?>")'>
         <div class="container">
@@ -16,6 +18,8 @@
             </div>
         </div>
     </div>
+
+<?php endif; ?>
     <!-- ================ Banner area end ================ -->
 
 
