@@ -300,7 +300,7 @@
 						?>
                         <div class="item">
 							<?php if ( $link && $logo ): ?>
-                                <a href="<?php echo esc_url( $link ); ?>" target="_blanc" class="partner-item p-1">
+                                <a href="<?php echo esc_url( $link ); ?>" target="_blank" class="partner-item p-1">
                                     <img src="<?php echo esc_url( $logo['url'] ); ?>"
                                          alt="<?php echo esc_attr( $name ); ?>" loading="lazy"
                                          class="img-fluid">
@@ -314,7 +314,7 @@
                                 </div>
 							<?php endif ?>
 							<?php if ( $link && ! $logo && $name ): ?>
-                                <a href="<?php echo esc_url( $link ); ?>" target="_blanc" class="partner-item p-1">
+                                <a href="<?php echo esc_url( $link ); ?>" target="_blank" class="partner-item p-1">
                                     <p><?php echo esc_attr( $name ); ?></p>
                                 </a>
 							<?php endif ?>

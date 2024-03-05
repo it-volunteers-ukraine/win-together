@@ -88,7 +88,7 @@
         dots: false,
         nav: false,
         autoplay: true,
-        autoplayHoverPause:true,
+        autoplayHoverPause: true,
         responsiveClass: true,
         responsive: {
             0: {
@@ -151,7 +151,7 @@ const callToActionVideoBtn = document.querySelector('#callToActionVideoBtn');
 const aboutVideoBtn = document.querySelector('#aboutVideoBtn');
 
 callToActionVideoBtn.addEventListener('click', openVideoLightbox);
-aboutVideoBtn.addEventListener('click', openVideoLightbox,true);
+aboutVideoBtn.addEventListener('click', openVideoLightbox);
 
 function openVideoLightbox(event) {
     const instance = basicLightbox.create(
