@@ -144,7 +144,7 @@ a:hover {
 .scroll-top {
     display: none;
     position: fixed;
-    bottom: 2px;
+    bottom: 8px;
     text-align: center;
     right: 2%;
     width: 40px;
@@ -156,6 +156,12 @@ a:hover {
     text-decoration: none;
     border-radius: 100%;
     z-index: 999;
+}
+
+@media screen and (min-width: 768px) {
+    .scroll-top {
+        bottom: 30px;
+    }
 }
 
 .scroll-top:hover {
@@ -2621,4 +2627,23 @@ a:hover {
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+}
+
+/*  Footer creators brand */
+.footer-creators {
+    line-height: 26px;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.footer-creators a {
+    color: #d0d4d6;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-creators a:hover {
+    color: #f44647;
 }
