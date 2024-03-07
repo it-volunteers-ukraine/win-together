@@ -138,4 +138,8 @@
     .slider-overlay h1 {
         font-size: 38px;
     }
+
+    .custom-logo {
+        height: 50px;
+    }
 }
