@@ -18,13 +18,16 @@
                 <h3 class="text-white mb-20"><?php echo $args['title']; ?></h3>
                 <ul class="contact-info">
 
-					<?php if ( get_field( 'phone_show', 'option' ) ) : ?>
+					<?php if ( get_field( 'phone', 'option' ) ) : ?>
                         <li><a href="tel:<?php the_field( 'phone', 'option' ); ?>">
-                                <i class="fas fa-phone-alt"></i> <?php the_field( 'phone_display', 'option' ); ?>
+                                <i class="fas fa-phone-alt"></i>
+								<?php echo ( get_field( 'phone_display', 'option' ) )
+									? get_field( 'phone_display', 'option' )
+									: ( get_field( 'phone', 'option' ) ); ?>
                             </a>
                         </li>
 					<?php endif; ?>
-					<?php if ( get_field( 'email_show', 'option' ) ) : ?>
+					<?php if ( get_field( 'email', 'option' ) ) : ?>
                         <li><a href="mailto:<?php the_field( 'email', 'option' ); ?>">
                                 <i class="far fa-envelope"></i> <?php the_field( 'email', 'option' ); ?></a>
                         </li>
