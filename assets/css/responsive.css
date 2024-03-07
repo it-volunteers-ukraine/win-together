@@ -15,6 +15,10 @@
         height: 30px;
         line-height: 30px;
     }
+
+    .custom-logo {
+        height: 52px;
+    }
 }
 
 /* Medium Devices, Desktops */
@@ -55,6 +59,10 @@
     .fundraising-row {
         display: flex;
         flex-direction: column-reverse;
+    }
+
+    .custom-logo {
+        height: 55px;
     }
 }
 
