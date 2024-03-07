@@ -48,11 +48,6 @@
         $('.current-year').text((new Date).getFullYear());
     });
 
-    /* ----------------------------
-        venobox
-        ------------------------------ */
-
-    $('.venobox').venobox();
 
     /* ----------------------------
         Counter up
